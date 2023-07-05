@@ -40,11 +40,7 @@ export class Password {
     if (password !== confirmPassword) {
       throw new BadRequestError('Passwords do not match');
     }
-    console.log(token);
-
     const existingUser: IAuthDocument = await authService.getAuthUserByPasswordToken(token);
-    console.log(existingUser);
-
     if (!existingUser) {
       throw new BadRequestError('Reset token has expired.');
     }
