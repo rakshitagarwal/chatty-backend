@@ -2,10 +2,10 @@
 import { Request, Response } from 'express';
 import * as cloudinaryUploads from '@global/helpers/cloudinary-upload';
 import { SignUp } from '@auth/controllers/signup';
+import { CustomError } from '@global/helpers/error-handler';
 import { authMock, authMockRequest, authMockResponse } from '@root/mocks/auth.mock';
 import { authService } from '@service/db/auth.service';
 import { UserCache } from '@service/redis/user.cache';
-import { CustomError } from '@global/helpers/error-handler';
 
 jest.useFakeTimers();
 jest.mock('@service/queues/base.queue');
